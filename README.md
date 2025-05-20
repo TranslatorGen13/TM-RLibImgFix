@@ -9,9 +9,9 @@
 Расширение протестировано в следующих браузерах:
 
 | Статус | Браузер        | Платформа тестирования |
-| - | -------------- | ---------------------- |
-| ✅      | Google Chrome  | Windows                |
-| ✅      | Firefox        | Windows, Android       |
-| ✅      | Opera          | Windows                |
-| ✅      | Яндекс Браузер | Windows                |
-| ✅      | MS Edge        | Windows, Android       |
+| -      | -------------- | ---------------------- |
+| ⠀ ✅  | Google Chrome  | Windows                |
+| ⠀ ✅  | Firefox        | Windows, Android       |
+| ⠀ ✅  | Opera          | Windows                |
+| ⠀ ✅  | Яндекс Браузер | Windows                |
+| ⠀ ✅  | MS Edge        | Windows, Android       |
