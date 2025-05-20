@@ -7,7 +7,9 @@
 // @author       TranslatorGen13
 // @match        https://*.novelslib.me/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=ranobelib.me
-// @grant        none
+// @homepageURL    https://github.com/TranslatorGen13/TM-RLibImgFix
+// @updateURL      https://raw.githubusercontent.com/TranslatorGen13/TM-RLibImgFix/refs/heads/main/TM-RLibImgFix.js
+// @downloadURL    https://raw.githubusercontent.com/TranslatorGen13/TM-RLibImgFix/refs/heads/main/TM-RLibImgFix.js
 // ==/UserScript==
 
 (function() {
