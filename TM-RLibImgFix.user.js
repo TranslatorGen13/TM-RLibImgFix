@@ -2,8 +2,8 @@
 // @name         TM-RLibImgFix
 // @name:ru      Починка иллюстраций на ренобелибе
 // @namespace    http://tampermonkey.net/
-// @version      0.0.1
-// @description:ru  Чинит отображение иллюстраций на ренобелибе с помощью замены абсолютных ссылок на относительные
+// @version      0.0.2
+// @description:ru  Чинит отображение иллюстраций на ренобелибе и ссылки из закреплённых коментариев с помощью замены абсолютных ссылок на относительные
 // @author       TranslatorGen13
 // @match        https://*.novelslib.me/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=ranobelib.me
@@ -19,10 +19,14 @@
         document.querySelectorAll('img[src^="' + oldUrl + '"]').forEach(img => {
             img.src = img.src.replace(oldUrl, '');
         });
+        document.querySelectorAll('a[href^="' + oldUrl + '"]').forEach(a => {
+            a.href = a.href.replace(oldUrl, '');
+        });
     }
     setInterval(function() {
-        if (document.querySelector('img[src^="' + oldUrl + '"]')!=null){
+        if (document.querySelector('img[src^="' + oldUrl + '"]')!=null || document.querySelectorAll('a[href^="' + oldUrl + '"]')!=null){
             ReplaceUrl();
         }
     }, 1000)
 })();
+
