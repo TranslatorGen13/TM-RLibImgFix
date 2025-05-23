@@ -1,7 +1,7 @@
-# Скрипт утратил основной функционал в виду не актульности проблемы
+## Скрипт утратил основной функционал в виду не актуальности проблемы
 ![image](https://github.com/user-attachments/assets/91c515cf-7d03-465f-823f-359ae8c51e67)
 # Cкрипт для починки иллюстраций на сайте Renobelib
-На данный момент скрипт чинит загрузку иллюстраций в старых главах, выложенных на сайте Renobelib. Данный скрипт заменяет абсолютные ссылки иллюстраций на относительные.
+На данный момент скрипт чинит загрузку иллюстраций в старых главах, выложенных на сайте Renobelib. Данный скрипт заменяет абсолютные ссылки иллюстраций и внутринних ссылок в закреплённых сообщениях на относительные.
 ## Установка
 1. Установите [Tampermonkey](https://www.tampermonkey.net/index.php) (магазины расширений [Chrome](https://chromewebstore.google.com/detail/dhdgffkkebhmkfjojejmpbldmpobfkfo), [Firefox](https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/), [Firefox Mobile](https://addons.mozilla.org/ru/android/addon/tampermonkey/), [Opera и Яндекс Браузер](https://addons.opera.com/en/extensions/details/tampermonkey-beta/), [Edge](https://microsoftedge.microsoft.com/addons/detail/iikmkjmpaadaobahmlepeloendndfphd) (для мобильной версии Edge следует перейти в `Расширения > Tampermonkey > Получить` ) )
 2. Нажмите на иконку расширения Tampermonkey или дождитесь открытия сайта `www.tampermonkey.net`
