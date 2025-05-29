@@ -42,7 +42,7 @@
             document.querySelector('#BtnLayerFix').appendChild(elem);
         };
     };
-    function ReplaceUrl() {
+    function replaceUrl() {
         ///Исправление ссылок в закреплённых комментариях и источников изображений
         document.querySelectorAll('img[src^="' + oldUrl + '"]').forEach(img => {
             img.src = img.src.replace(oldUrl, '');
@@ -54,7 +54,7 @@
     setInterval(function() {
         if ((document.URL.includes('novelslib') || document.URL.includes('ranobelib')) & document.URL.includes('/read')){
             if (document.querySelector('img[src^="' + oldUrl + '"]')!=null || document.querySelectorAll('a[href^="' + oldUrl + '"]').length>0){
-                ReplaceUrl();
+                replaceUrl();
             };
             if (document.querySelector('#BtnLayerFix')==null){
                 fixLayer();
