@@ -20,5 +20,5 @@
 | ⠀✅  | Google Chrome   | Windows                |                     Да                            |
 | ⠀✅  | Opera           | Windows                |                     Да                            |
 | ⠀✅  | Яндекс Браузер  | Windows                |                     Да                            |
-| ⠀✅  | MS Edge         | Windows, Android       |               На компьютере Да                    |
+| ⠀✅  | MS Edge         | Windows, Android       |                     Да                            |
 | ⠀✅  | Firefox         | Windows, Android       |                     Нет                           | 
