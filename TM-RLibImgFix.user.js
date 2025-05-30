@@ -2,7 +2,7 @@
 // @name         TM-RLibImgFix
 // @name:ru      Починка иллюстраций на ренобелибе
 // @namespace    http://tampermonkey.net/
-// @version      0.0.3
+// @version      0.0.4
 // @description:ru  Чинит отображение иллюстраций на ренобелибе и ссылки из закреплённых коментариев с помощью замены абсолютных ссылок на относительные, а также исправляет отображение панели переключения глав
 // @author       TranslatorGen13
 // @match        https://ranobelib.me/*
@@ -33,6 +33,9 @@
                                                                   };
                                                               };
                                                              });
+        if (document.querySelector('#dopelHunt') === null) {
+            document.querySelector('.comments-list').insertAdjacentHTML("afterbegin", '<div id="dopelHunt"></div>');
+        };
     };
     function fixLayer() {
         ///Исправление отображения панели переключения глав
@@ -61,7 +64,7 @@
             };
         };
         if (document.querySelector('.comments-list')!=null) {
-            if (document.querySelector('.comments-list').children.length != 0 & btn_next != null) {
+            if (document.querySelector('.comments-list').children.length != 0 & (btn_next != null || document.querySelector('#dopelHunt') === null)) {
                 killDoppelganger();
             };
         };
