@@ -2,7 +2,7 @@
 // @name         TM-RLibImgFix
 // @name:ru      Починка иллюстраций на ренобелибе
 // @namespace    http://tampermonkey.net/
-// @version      0.0.4
+// @version      0.0.5
 // @description:ru  Чинит отображение иллюстраций на ренобелибе и ссылки из закреплённых коментариев с помощью замены абсолютных ссылок на относительные, а также исправляет отображение панели переключения глав
 // @author       TranslatorGen13
 // @match        https://ranobelib.me/*
@@ -14,6 +14,7 @@
 // @match        https://*.hentailib.me/*
 // @match        https://slashlib.me/*
 // @match        https://anilib.me/*
+// @match        https://*.animelib.org/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=ranobelib.me
 // @homepageURL    https://github.com/TranslatorGen13/TM-RLibImgFix
 // @updateURL      https://raw.githubusercontent.com/TranslatorGen13/TM-RLibImgFix/refs/heads/main/TM-RLibImgFix.js
@@ -33,14 +34,12 @@
                                                                   };
                                                               };
                                                              });
-        if (document.querySelector('#dopelHunt') === null) {
-            document.querySelector('.comments-list').insertAdjacentHTML("afterbegin", '<div id="dopelHunt"></div>');
         };
     };
     function fixLayer() {
         ///Исправление отображения панели переключения глав
-        let elem = document.querySelector('#app').children[1].childNodes[7];
-        if (elem!=null) {
+        if (document.querySelector('#app').children[1] != null & document.querySelector('#app').children[1].childNodes[7] != null) {
+            let elem = document.querySelector('#app').children[1].childNodes[7];
             elem.insertAdjacentHTML('beforeBegin','<div id="BtnLayerFix"></div>');
             document.querySelector('#BtnLayerFix').appendChild(elem);
         };
@@ -53,8 +52,10 @@
         document.querySelectorAll('a[href^="' + oldUrl + '"]').forEach(a => {
             a.href = a.href.replace(oldUrl, '');
         });
-    }
-    setInterval(function() {
+    };
+
+    const mutationObserver = new MutationObserver(function() {
+        ///Отслеживание изменений страницы
         if ((document.URL.includes('novelslib') || document.URL.includes('ranobelib')) & document.URL.includes('/read')){
             if (document.querySelector('img[src^="' + oldUrl + '"]')!=null || document.querySelectorAll('a[href^="' + oldUrl + '"]').length>0){
                 replaceUrl();
@@ -64,11 +65,12 @@
             };
         };
         if (document.querySelector('.comments-list')!=null) {
-            if (document.querySelector('.comments-list').children.length != 0 & (btn_next != null || document.querySelector('#dopelHunt') === null)) {
-                killDoppelganger();
-            };
+            killDoppelganger();
         };
-        btn_next = document.querySelector('.comments-next');
-    }, 1000)
+    });
+    mutationObserver.observe(document.querySelector("#app"), {
+        childList: true,
+        subtree: true
+    });
 })();
 
