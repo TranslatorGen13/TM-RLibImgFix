@@ -24,7 +24,6 @@
 (function() {
 
     const oldUrl = 'https://ranobelib.me';
-    let btn_next;
     function killDoppelganger() {
         ///Удаление комментариев-дубликатов
         document.querySelectorAll('.comment').forEach(div => {let a = document.querySelectorAll('#' + div.id);
@@ -34,7 +33,6 @@
                                                                   };
                                                               };
                                                              });
-        };
     };
     function fixLayer() {
         ///Исправление отображения панели переключения глав
@@ -73,4 +71,3 @@
         subtree: true
     });
 })();
-
